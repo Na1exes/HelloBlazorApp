@@ -1,74 +1,7 @@
 ﻿@page "/"
 
-<div class="container">
-	<div class="d-flex justify-content-between align-items-center">
-		<h3>Управление Материалами</h3>
-		<NavLink href="/manage-materials/new" class="btn btn-primary btn-sm">Добавить материал</NavLink>
-	</div>
-	<hr />
-</div>
-<table class="table">
-	<thead>
-	<th>Id</th>
-	<th>Название</th>
-	<th>Количество</th>
-	<th>Коментарий</th>
-	<th></th>
-	</thead>
-	<tbody>
-		@if (_isLoading)
-		{
-			<tr>
-				<td colspan="5" class="text-center">Загрузка материалов</td>
-			</tr>
-		}
-		else if (!_isLoading && (_proposalMaterial is null || !_proposalMaterial.Any()))
-		{
-			<tr>
-				<td colspan="5" class="text-center">
-					<h3 class="mb-3">Материалы не найдены</h3>
-					<NavLink href="/manage-materials/new">Добавить первый материал</NavLink>
-				</td>
-			</tr>
-		}
-		else
-		{
-			int sno = 1;
-			@foreach (var proposalMaterials in _proposalMaterial!)
-			{
-				var editMaterialLink = $"/manage-materials/edit/{proposalMaterials.Id:int?}";
+<PageTitle>Home</PageTitle>
 
-				<tr>
-					<td>@(sno++)</td>
-					<td>@proposalMaterials.Id</td>
-					<td>@proposalMaterials.MaterialName</td>
-					<td>@proposalMaterials.Quantity</td>
-					<td>@proposalMaterials.Comment</td>
-					<td><NavLink href="@editMaterialLink" class="btn btn-primary btn-sm">Редактировать</NavLink></td>
-				</tr>
-			}
-		}
-	</tbody>
-</table>
+<h1>Hello, world!</h1>
 
-@code {
-	private bool _isLoading = false;
-	private IEnumerable<ProposalMaterial>? _proposalMaterial = null;
-
-	protected override async Task OnInitializedAsync()
-	{
-		_isLoading = true;
-		try
-		{
-			_proposalMaterial = await MaterialPostServices.GetProposalMaterialsAsync();
-		}
-		catch (Exception ex)
-		{
-			//throw;
-		}
-		finally
-		{
-			_isLoading = false;
-		}
-	}
-}
+Welcome to your new app.

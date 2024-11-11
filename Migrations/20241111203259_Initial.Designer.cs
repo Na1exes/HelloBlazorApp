@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HelloBlazorApp.Migrations
 {
     [DbContext(typeof(PurchaseContext))]
-    [Migration("20241110191800_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20241111203259_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace HelloBlazorApp.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("HelloBlazorApp.Services.Proposal", b =>
+            modelBuilder.Entity("HelloBlazorApp.Data.Entities.Proposal", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -55,7 +55,7 @@ namespace HelloBlazorApp.Migrations
                     b.ToTable("Proposals");
                 });
 
-            modelBuilder.Entity("HelloBlazorApp.Services.ProposalMaterial", b =>
+            modelBuilder.Entity("HelloBlazorApp.Data.Entities.ProposalMaterial", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()

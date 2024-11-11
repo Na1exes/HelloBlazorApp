@@ -22,7 +22,7 @@ namespace HelloBlazorApp.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("HelloBlazorApp.Services.Proposal", b =>
+            modelBuilder.Entity("HelloBlazorApp.Data.Entities.Proposal", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -52,7 +52,7 @@ namespace HelloBlazorApp.Migrations
                     b.ToTable("Proposals");
                 });
 
-            modelBuilder.Entity("HelloBlazorApp.Services.ProposalMaterial", b =>
+            modelBuilder.Entity("HelloBlazorApp.Data.Entities.ProposalMaterial", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()

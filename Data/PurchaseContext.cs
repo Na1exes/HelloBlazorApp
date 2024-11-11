@@ -1,5 +1,4 @@
-﻿using HelloBlazorApp.Services;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace HelloBlazorApp.Data
 {
@@ -13,9 +12,10 @@ namespace HelloBlazorApp.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseNpgsql(connectionString:
-               "Server=localhost;Port=5432;User Id=postgres;Database=testdb;Password=123456;");
+               "Server=localhost;Port=5432;User Id=postgres;Database=Blazor;Password=123456;");
             base.OnConfiguring(optionsBuilder);
         }
+        // Обязательная настройка конструктора. Конфигуратор в Startup’е использует этот конструктор
         //public PurchaseContext(DbContextOptions<PurchaseContext> options) : base(options)
         //{ }
 

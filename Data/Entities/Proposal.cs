@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace HelloBlazorApp.Services
+namespace HelloBlazorApp.Data.Entities
 {
     public enum ProposalStatus : byte
     {
