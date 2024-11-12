@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HelloBlazorApp.Migrations
 {
     [DbContext(typeof(PurchaseContext))]
-    [Migration("20241111203259_Initial")]
-    partial class Initial
+    [Migration("20241112001304_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -38,8 +38,8 @@ namespace HelloBlazorApp.Data.Entities
                         return "Заявка удалена";
                     case ProposalStatus.Approved:
                         return "Заявка утверждена";
+                    default: return "Неизвестный статус";
                 }
-                return "";
             }
         }
         [Required]
